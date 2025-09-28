@@ -1,14 +1,17 @@
 package main.java.ru.urfu.console;
 
+
 import main.java.ru.urfu.parser.CsvParser;
 import main.java.ru.urfu.resolver.Resolver;
+import main.java.ru.urfu.mapper.Mapper;
+import main.java.ru.urfu.drawer.Drawer;
 
 import java.util.Scanner;
 
 public class Communicator {
     public static void runChampionship() {
         var scan = new Scanner(System.in);
-        System.out.print("Full Path to .csv file required: ");
+        System.out.print("Полный путь до .csv файла: ");
         var filename = scan.nextLine();
 
         var players = CsvParser.parserCsvToList(filename);
@@ -17,5 +20,17 @@ public class Communicator {
         System.out.printf("Максимальное количество голов у защитника: %d\n", resolver.getMaxDefenderGoalsCount());
         System.out.printf("Название позиции самого дорогого немецкого игрока: %s\n", resolver.getTheExpensiveGermanPlayerPosition());
         System.out.printf("Команда с наибольшим средним числом удалений на одного игрока: %s\n", resolver.getTheRudestTeam());
+        waitEnter(scan);
+
+        var mapper = new Mapper(players);
+        var drawer = new Drawer();
+
+        drawer.drawDiagramPlayersByPosition(mapper.getPlayersByPosition());
+
+    }
+
+    public static void waitEnter(Scanner scan) {
+        System.out.print("Ожидание ENTER для продолжения... ");
+        scan.nextLine();
     }
 }
