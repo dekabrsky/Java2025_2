@@ -1,17 +1,25 @@
 package ru.urfu;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.List;
+
+import ru.urfu.resolver.Task1;
+import ru.urfu.model.Player;
+import ru.urfu.model.Position;
+import ru.urfu.resolver.Task1;
+import ru.urfu.io.CSVReader;
+import ru.urfu.io.GraphDrawer;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how GIGA IDE suggests fixing it.
-        System.out.printf("Hello and welcome!");
+		List<Player> players = CSVReader.readFromFile(args[1]);
+		Task1 task1 = new Task1(players);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        System.out.printf("Task1:\n");
+		System.out.printf("Игроков без агенства: %s\n", task1.getCountWithoutAgency());
+		System.out.printf("Наибольшее число голов у игрока из числа защитников: %s\n", task1.getMaxDefenderGoalsCount());
+		System.out.printf("Позиция самого дорогого немецкого игрока: %s\n", task1.getTheExpensiveGermanPlayerPosition());
+		System.out.printf("Команда с наибольшим средним числом удалений на одного игрока: %s\n", task1.getTheRudestTeam());
+
+		GraphDrawer.displayGraph3D(players);
     }
 }
