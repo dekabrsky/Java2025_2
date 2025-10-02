@@ -1,9 +1,14 @@
 plugins {
     id("java")
+    id("application")
 }
 
 group = "ru.urfu"
 version = "1.0-SNAPSHOT"
+
+application {
+    mainClass = "ru.urfu.Main"
+}
 
 repositories {
     mavenCentral()
