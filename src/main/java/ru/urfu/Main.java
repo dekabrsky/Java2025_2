@@ -1,17 +1,30 @@
 package ru.urfu;
 
+import ru.urfu.io.IParser;
+import ru.urfu.io.CsvPlayerParser;
+import ru.urfu.model.Player;
+import ru.urfu.resolver.PlayerResolver;
+import ru.urfu.visualization.ChartDrawer;
+
+import javax.swing.*;
+import java.io.IOException;
+import java.util.List;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how GIGA IDE suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args) throws IOException {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 400);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        IParser<Player> parser = new CsvPlayerParser();
+        List<Player> players = parser.parse("src/main/resources/fakePlayers.csv");
+        PlayerResolver playerResolver = new PlayerResolver(players);
+
+        ChartDrawer chartDrawer = new ChartDrawer(playerResolver);
+        frame.add(chartDrawer.getChartPanel());
+
+        frame.setVisible(true);
     }
 }
