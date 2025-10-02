@@ -15,7 +15,7 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-*.kts
+.kts
 ### Eclipse ###
 .apt_generated
 .classpath
