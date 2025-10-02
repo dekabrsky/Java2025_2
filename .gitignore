@@ -15,7 +15,7 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-
+*.kts
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -42,3 +42,5 @@ bin/
 .DS_Store
 /.gigaide/
 /.idea/
+
+
