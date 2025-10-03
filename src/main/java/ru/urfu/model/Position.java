@@ -3,7 +3,7 @@ package ru.urfu.model;
 public enum Position {
     GOALKEEPER("Вратарь"),
     DEFENDER("Защитник"),
-    MIDFIELD("Полузащитик"),
+    MIDFIELD("Полузащитник"),
     FORWARD("Нападающий");
 
     private final String titleRu;

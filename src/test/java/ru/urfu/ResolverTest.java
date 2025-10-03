@@ -66,7 +66,7 @@ public class ResolverTest {
             new Player("Terry Hegmann", Position.DEFENDER, "Graham-Powlowski", 11, "Germany", 7294362, "Wisconsin prophets", 8)
         );
         Resolver resolver = new Resolver(players);
-        assertEquals("Полузащитик", resolver.getTheExpensiveGermanPlayerPosition());
+        assertEquals("Полузащитник", resolver.getTheExpensiveGermanPlayerPosition());
 
         List<Player> noGermanPlayers = List.of(
                 new Player("Iva Streich", Position.MIDFIELD, "D'Amore LLC", 19, "Colombia", 75012006, "Nevada whales", 7),
