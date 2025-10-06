@@ -1,17 +1,18 @@
-package ru.urfu;
+package main.java.ru.urfu;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+// import main.java.ru.urfu.console.Communicator;
+
+import main.java.ru.urfu.presentation.controller.Controller;
+import main.java.ru.urfu.presentation.view.ConsoleView;
+import main.java.ru.urfu.resolver.Resolver;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how GIGA IDE suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Communicator.runChampionship();
+        var console = new ConsoleView();
+        var resolver = new Resolver();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        var controller = new Controller(console, resolver);
+        controller.start();
     }
 }

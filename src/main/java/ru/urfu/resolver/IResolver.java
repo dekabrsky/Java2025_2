@@ -1,4 +1,4 @@
-package ru.urfu.resolver;
+package main.java.ru.urfu.resolver;
 
 public interface IResolver {
     // Выведите количество игроков, интересы которых не представляет агентство.
