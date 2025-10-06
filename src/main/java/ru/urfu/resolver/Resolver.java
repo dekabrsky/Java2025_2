@@ -3,6 +3,7 @@ package main.java.ru.urfu.resolver;
 import main.java.ru.urfu.model.Player;
 import main.java.ru.urfu.model.Position;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -10,9 +11,9 @@ import java.util.stream.Collectors;
 
 public class Resolver implements IResolver {
 
-    private final List<Player> players;
+    private List<Player> players = new ArrayList<>();
 
-    public Resolver(List<Player> players) {
+    public void setPlayers(List<Player> players) {
         this.players = players;
     }
 

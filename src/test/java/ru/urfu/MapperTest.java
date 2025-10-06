@@ -23,7 +23,8 @@ public class MapperTest {
                 new Player("Player 5", "Team C", "City C", Position.FORWARD, "Nat 3", "Agency 3", 100, 0, 0, 0, 0)
         );
 
-        Mapper mapper = new Mapper(players);
+        Mapper mapper = new Mapper();
+        mapper.setPlayers(players);
         Map<Position, Long> playersByPosition = mapper.getPlayersByPosition();
 
         assertEquals(2L, playersByPosition.get(Position.GOALKEEPER));
@@ -41,7 +42,8 @@ public class MapperTest {
                 new Player("Player 4", "Team B", "City B", Position.MIDFIELD, "Nat 2", "Agency 2", 100, 0, 0, 0, 0)
         );
 
-        Mapper mapper = new Mapper(players);
+        Mapper mapper = new Mapper();
+        mapper.setPlayers(players);
         Map<Position, Long> playersByPosition = mapper.getPlayersByPosition();
 
         assertEquals(2L, playersByPosition.get(Position.GOALKEEPER));
@@ -53,7 +55,8 @@ public class MapperTest {
     void testGetPlayersByPositionZero() {
         List<Player> players = Collections.emptyList();
 
-        Mapper mapper = new Mapper(players);
+        Mapper mapper = new Mapper();
+        mapper.setPlayers(players);
         Map<Position, Long> playersByPosition = mapper.getPlayersByPosition();
 
         assertEquals(0, playersByPosition.size());
