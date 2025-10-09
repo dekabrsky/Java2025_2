@@ -1,7 +1,7 @@
 package ru.urfu.parser;
 
-import ru.urfu.model.Player;
-import ru.urfu.model.Position;
+import ru.urfu.domain.model.Player;
+import ru.urfu.domain.model.Position;
 
 import java.io.IOException;
 import java.nio.file.Path;

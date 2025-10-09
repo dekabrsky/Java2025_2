@@ -1,12 +1,10 @@
 package ru.urfu.resolver;
 
-import ru.urfu.model.Player;
-import ru.urfu.model.Position;
+import ru.urfu.domain.model.Player;
+import ru.urfu.domain.model.Position;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 public class Resolver implements IResolver {
 

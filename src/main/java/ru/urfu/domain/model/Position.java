@@ -1,4 +1,4 @@
-package ru.urfu.model;
+package ru.urfu.domain.model;
 
 public enum Position {
     GOALKEEPER,

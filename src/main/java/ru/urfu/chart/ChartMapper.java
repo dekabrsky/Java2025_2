@@ -2,8 +2,8 @@ package ru.urfu.chart;
 
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import ru.urfu.model.Player;
-import ru.urfu.model.Position;
+import ru.urfu.domain.model.Player;
+import ru.urfu.domain.model.Position;
 
 import java.util.*;
 

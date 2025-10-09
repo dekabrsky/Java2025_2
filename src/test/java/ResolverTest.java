@@ -1,10 +1,9 @@
 import org.junit.jupiter.api.Test;
-import ru.urfu.model.Player;
-import ru.urfu.model.Position;
+import ru.urfu.domain.model.Player;
+import ru.urfu.domain.model.Position;
 import ru.urfu.resolver.Resolver;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

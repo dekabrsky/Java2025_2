@@ -2,7 +2,7 @@ package ru.urfu.console;
 
 import ru.urfu.chart.ChartDrawer;
 import ru.urfu.chart.ChartMapper;
-import ru.urfu.model.Player;
+import ru.urfu.domain.model.Player;
 import ru.urfu.parser.CsvParser;
 import ru.urfu.resolver.Resolver;
 

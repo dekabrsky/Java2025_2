@@ -2,10 +2,11 @@ package ru.urfu.presentation.controller;
 
 import ru.urfu.chart.ChartDrawer;
 import ru.urfu.chart.ChartMapper;
-import ru.urfu.model.Player;
-import ru.urfu.parser.CsvParser;
+import ru.urfu.domain.model.Player;
+import ru.urfu.domain.useCase.GetMaxDefenderGoalsUseCase;
+import ru.urfu.domain.useCase.GetPlayersUseCase;
+import ru.urfu.domain.useCase.GetPlayersWithoutAgencyUseCase;
 import ru.urfu.presentation.view.ViewInterface;
-import ru.urfu.resolver.Resolver;
 
 import java.util.List;
 import java.util.Scanner;
@@ -13,13 +14,14 @@ import java.util.Scanner;
 public class Controller {
     private final ViewInterface view;
     private final Scanner scanner;
-    private final Resolver resolver;
+
+    private final GetPlayersUseCase getPlayersUseCase;
 
     private List<Player> players;
 
-    public Controller(ViewInterface view, Resolver resolver) {
+    public Controller(ViewInterface view, GetPlayersUseCase getPlayersUseCase) {
         this.view = view;
-        this.resolver = resolver;
+        this.getPlayersUseCase = getPlayersUseCase;
         scanner = new Scanner(System.in);
     }
 
@@ -29,7 +31,7 @@ public class Controller {
             view.showEnterCommand();
 
             switch (scanner.nextLine()) {
-                case "FILE" -> onEnterFile();
+                case "LOAD" -> onLoadFile();
                 case "1" -> onTask1Requested();
                 case "2" -> onTask2Requested();
                 case "CHART" -> onChartRequested();
@@ -41,10 +43,9 @@ public class Controller {
         }
     }
 
-    private void onEnterFile() {
+    private void onLoadFile() {
         view.showSelectFile();
-        players = CsvParser.parseCsvToList(scanner.nextLine());
-        resolver.setPlayers(players);
+        players = getPlayersUseCase.execute(scanner.nextLine());
     }
 
     private boolean hasPlayersError() {
@@ -58,12 +59,12 @@ public class Controller {
 
     private void onTask1Requested() {
         if (hasPlayersError()) return;
-        view.showCountWithoutAgency(resolver.getCountWithoutAgency());
+        view.showCountWithoutAgency(GetPlayersWithoutAgencyUseCase.execute(players));
     }
 
     private void onTask2Requested() {
         if (hasPlayersError()) return;
-        view.showMaxDefenderGoalsCount(resolver.getMaxDefenderGoalsCount());
+        view.showMaxDefenderGoalsCount(GetMaxDefenderGoalsUseCase.execute(players));
     }
 
     private void onChartRequested() {
