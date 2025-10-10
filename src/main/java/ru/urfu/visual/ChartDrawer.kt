@@ -10,7 +10,7 @@ import ru.urfu.model.Player
 import javax.swing.JFrame
 
 object ChartDrawer {
-    fun GoalsVsValue(players: List<Player>) {
+    fun asdasdGoalsVsValue(players: List<Player>) {
         val series = XYSeries("FORWARD")
 
         players.filter { it.position.equals("FORWARD", ignoreCase = true) }
