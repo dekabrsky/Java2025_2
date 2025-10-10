@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("application")
+    kotlin("jvm")
 }
 
 group = "ru.urfu"
@@ -11,8 +12,14 @@ repositories {
 }
 
 dependencies {
+    implementation(kotlin("stdlib-jdk8"))
+
+    implementation("org.jfree:jfreechart:1.5.3")
+    testImplementation(kotlin("test"))
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+
 }
 
 tasks.test {
@@ -20,5 +27,9 @@ tasks.test {
 }
 
 application {
-    mainClass = "ru.urfu.Main"
+    mainClass = "ru.urfu.MainKt"
+}
+
+kotlin {
+    jvmToolchain(22)
 }
