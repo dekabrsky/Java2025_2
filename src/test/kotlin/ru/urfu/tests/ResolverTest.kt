@@ -5,6 +5,8 @@ import kotlin.test.assertEquals
 import ru.urfu.model.Player
 import ru.urfu.resolver.Resolver
 
+
+
 class ResolverTest {
 
     private val testPlayers = listOf(
