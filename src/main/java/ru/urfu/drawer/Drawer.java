@@ -19,7 +19,7 @@ public class Drawer {
         frame.setSize(800, 600);
         frame.setContentPane(chartPanel);
         frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
     }
 }

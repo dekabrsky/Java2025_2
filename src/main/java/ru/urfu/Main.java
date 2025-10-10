@@ -1,9 +1,14 @@
 package ru.urfu;
 
-import ru.urfu.console.Communicator;
+import ru.urfu.presenter.controller.Controller;
+import ru.urfu.presenter.view.ConsoleView;
+import ru.urfu.resolver.Resolver;
 
 public class Main {
     public static void main(String[] args) {
-        Communicator.runChampionship();
+        final var resolver = new Resolver();
+        final var view = new ConsoleView();
+        final var controller = new Controller(view, resolver);
+        controller.start();
     }
 }

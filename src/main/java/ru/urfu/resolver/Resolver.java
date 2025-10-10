@@ -10,12 +10,19 @@ import java.util.stream.Collectors;
 
 public class Resolver implements IResolver {
 
-    private final List<Player> players;
+    private List<Player> players;
 
     public Resolver(List<Player> players) {
         this.players = players;
     }
 
+    public Resolver() {
+    }
+
+    @Override
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
 
     @Override
     public int getCountWithoutAgency() {
