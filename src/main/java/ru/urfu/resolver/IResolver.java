@@ -1,6 +1,13 @@
 package ru.urfu.resolver;
 
+import ru.urfu.model.Player;
+
+import java.util.List;
+
 public interface IResolver {
+
+    void setPlayers(List<Player> players);
+
     // Выведите количество игроков, интересы которых не представляет агентство.
     int getCountWithoutAgency();
 
