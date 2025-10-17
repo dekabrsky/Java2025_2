@@ -1,5 +1,6 @@
 package ru.urfu.presentation.controller;
 
+import com.google.inject.Inject;
 import ru.urfu.chart.ChartDrawer;
 import ru.urfu.chart.ChartMapper;
 import ru.urfu.domain.model.Player;
@@ -16,12 +17,22 @@ public class Controller {
     private final Scanner scanner;
 
     private final GetPlayersUseCase getPlayersUseCase;
+    private final GetMaxDefenderGoalsUseCase getMaxDefenderGoalsUseCase;
+    private final GetPlayersWithoutAgencyUseCase getPlayersWithoutAgencyUseCase;
 
     private List<Player> players;
 
-    public Controller(ViewInterface view, GetPlayersUseCase getPlayersUseCase) {
+    @Inject
+    public Controller(
+            ViewInterface view,
+            GetPlayersUseCase getPlayersUseCase,
+            GetMaxDefenderGoalsUseCase getMaxDefenderGoalsUseCase,
+            GetPlayersWithoutAgencyUseCase getPlayersWithoutAgencyUseCase
+    ) {
         this.view = view;
         this.getPlayersUseCase = getPlayersUseCase;
+        this.getMaxDefenderGoalsUseCase = getMaxDefenderGoalsUseCase;
+        this.getPlayersWithoutAgencyUseCase = getPlayersWithoutAgencyUseCase;
         scanner = new Scanner(System.in);
     }
 
@@ -59,12 +70,12 @@ public class Controller {
 
     private void onTask1Requested() {
         if (hasPlayersError()) return;
-        view.showCountWithoutAgency(GetPlayersWithoutAgencyUseCase.execute(players));
+        view.showCountWithoutAgency(getPlayersWithoutAgencyUseCase.execute());
     }
 
     private void onTask2Requested() {
         if (hasPlayersError()) return;
-        view.showMaxDefenderGoalsCount(GetMaxDefenderGoalsUseCase.execute(players));
+        view.showMaxDefenderGoalsCount(getMaxDefenderGoalsUseCase.execute());
     }
 
     private void onChartRequested() {

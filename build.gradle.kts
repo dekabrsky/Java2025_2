@@ -16,6 +16,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("org.jfree:jfreechart:1.5.6")
     implementation(kotlin("stdlib-jdk8"))
+    implementation("com.google.inject:guice:5.1.0")
 }
 
 tasks.test {

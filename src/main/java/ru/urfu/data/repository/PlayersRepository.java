@@ -5,8 +5,10 @@ import ru.urfu.data.dataSource.RemoteDataSource;
 import ru.urfu.domain.model.Player;
 import ru.urfu.domain.repository.IPlayersRepository;
 
+import javax.inject.Singleton;
 import java.util.List;
 
+@Singleton
 public class PlayersRepository implements IPlayersRepository {
     private final RemoteDataSource remoteDataSource;
     private final LocalDataSource localDataSource;
@@ -33,6 +35,11 @@ public class PlayersRepository implements IPlayersRepository {
         if (cachedPlayers.isEmpty()) {
             initializeData(link);
         }
+        return cachedPlayers;
+    }
+
+    @Override
+    public List<Player> getPlayers() {
         return cachedPlayers;
     }
 }
