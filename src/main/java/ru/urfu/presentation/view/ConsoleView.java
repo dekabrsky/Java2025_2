@@ -1,10 +1,32 @@
 package ru.urfu.presentation.view;
 
+import com.google.inject.Inject;
+import ru.urfu.presentation.presenter.Presenter;
+import ru.urfu.presentation.presenter.PresenterFactory;
+
+import java.util.Scanner;
+
 public class ConsoleView implements ViewInterface {
+
+    private final Presenter presenter;
+    private final Scanner scanner = new Scanner(System.in);
+
+    @Inject
+    public ConsoleView(PresenterFactory presenterFactory) {
+        presenter = presenterFactory.create(this);
+        start();
+    }
+
+    public void start() {
+        while (true) {
+            presenter.onNewCommand(scanner.nextLine());
+        }
+    }
+
     @Override
     public void showWelcome() {
         System.out.println("Команды: \n" +
-                "FILE - выбрать файл для анализа\n" +
+                "LOAD - выбрать файл для анализа\n" +
                 "1 - решение залачи 1 \n" +
                 "2 - решение задачи 2\n" +
                 "CHART - показать график\n" +

@@ -8,11 +8,11 @@ import ru.urfu.domain.useCase.GetPlayersUseCase;
 import ru.urfu.presentation.controller.Controller;
 import ru.urfu.presentation.view.ConsoleView;
 
+import java.io.File;
+
 public class Main {
     public static void main(String[] args) {
         Injector injector = Guice.createInjector(new AppModule());
-
-        var controller = injector.getInstance(Controller.class);
-        controller.start();
+        injector.getInstance(ConsoleView.class);
     }
 }
