@@ -15,6 +15,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("org.jfree:jfreechart:1.5.6")
     implementation("com.google.inject:guice:5.1.0")
+    implementation("org.telegram:telegrambots:6.9.0")
 }
 
 tasks.test {
