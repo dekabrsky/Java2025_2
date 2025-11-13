@@ -5,7 +5,8 @@ import ru.urfu.chart.ChartDrawer;
 import ru.urfu.chart.ChartMapper;
 import ru.urfu.domain.model.Player;
 import ru.urfu.domain.useCase.GetMaxDefenderGoalsUseCase;
-import ru.urfu.domain.useCase.GetPlayersUseCase;
+import ru.urfu.domain.useCase.GetPlayersFromDbUseCase;
+import ru.urfu.domain.useCase.LoadPlayersUseCase;
 import ru.urfu.domain.useCase.GetPlayersWithoutAgencyUseCase;
 import ru.urfu.presentation.view.ViewInterface;
 
@@ -14,9 +15,10 @@ import java.util.List;
 public class Presenter {
     private final ViewInterface view;
 
-    private final GetPlayersUseCase getPlayersUseCase;
+    private final LoadPlayersUseCase getPlayersUseCase;
     private final GetMaxDefenderGoalsUseCase getMaxDefenderGoalsUseCase;
     private final GetPlayersWithoutAgencyUseCase getPlayersWithoutAgencyUseCase;
+    private final GetPlayersFromDbUseCase getPlayersFromDbUseCase;
 
     private List<Player> players;
     private boolean isNeedSelectFile = false;
@@ -24,14 +26,16 @@ public class Presenter {
     @Inject
     public Presenter(
             ViewInterface view,
-            GetPlayersUseCase getPlayersUseCase,
+            LoadPlayersUseCase getPlayersUseCase,
             GetMaxDefenderGoalsUseCase getMaxDefenderGoalsUseCase,
-            GetPlayersWithoutAgencyUseCase getPlayersWithoutAgencyUseCase
+            GetPlayersWithoutAgencyUseCase getPlayersWithoutAgencyUseCase,
+            GetPlayersFromDbUseCase getPlayersFromDbUseCase
     ) {
         this.view = view;
         this.getPlayersUseCase = getPlayersUseCase;
         this.getMaxDefenderGoalsUseCase = getMaxDefenderGoalsUseCase;
         this.getPlayersWithoutAgencyUseCase = getPlayersWithoutAgencyUseCase;
+        this.getPlayersFromDbUseCase = getPlayersFromDbUseCase;
         view.showWelcome();
     }
 
@@ -44,6 +48,7 @@ public class Presenter {
 
         switch (command) {
             case "LOAD" -> onLoadFile();
+            case "DB" -> onGetFromDb();
             case "1" -> onTask1Requested();
             case "2" -> onTask2Requested();
             case "CHART" -> onChartRequested();
@@ -54,6 +59,10 @@ public class Presenter {
     private void onLoadFile() {
         view.showSelectFile();
         isNeedSelectFile = true;
+    }
+
+    private void onGetFromDb() {
+        players = getPlayersFromDbUseCase.execute();
     }
 
     private void onFileSelected(String link) {

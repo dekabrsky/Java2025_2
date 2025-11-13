@@ -5,7 +5,7 @@ import ru.urfu.chart.ChartDrawer;
 import ru.urfu.chart.ChartMapper;
 import ru.urfu.domain.model.Player;
 import ru.urfu.domain.useCase.GetMaxDefenderGoalsUseCase;
-import ru.urfu.domain.useCase.GetPlayersUseCase;
+import ru.urfu.domain.useCase.LoadPlayersUseCase;
 import ru.urfu.domain.useCase.GetPlayersWithoutAgencyUseCase;
 import ru.urfu.presentation.view.ViewInterface;
 
@@ -16,7 +16,7 @@ public class Controller {
     private final ViewInterface view;
     private final Scanner scanner;
 
-    private final GetPlayersUseCase getPlayersUseCase;
+    private final LoadPlayersUseCase getPlayersUseCase;
     private final GetMaxDefenderGoalsUseCase getMaxDefenderGoalsUseCase;
     private final GetPlayersWithoutAgencyUseCase getPlayersWithoutAgencyUseCase;
 
@@ -25,7 +25,7 @@ public class Controller {
     @Inject
     public Controller(
             ViewInterface view,
-            GetPlayersUseCase getPlayersUseCase,
+            LoadPlayersUseCase getPlayersUseCase,
             GetMaxDefenderGoalsUseCase getMaxDefenderGoalsUseCase,
             GetPlayersWithoutAgencyUseCase getPlayersWithoutAgencyUseCase
     ) {

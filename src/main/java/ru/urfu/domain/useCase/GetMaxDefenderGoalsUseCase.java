@@ -5,8 +5,6 @@ import ru.urfu.domain.model.Player;
 import ru.urfu.domain.model.Position;
 import ru.urfu.domain.repository.IPlayersRepository;
 
-import java.util.List;
-
 public class GetMaxDefenderGoalsUseCase {
     private final IPlayersRepository repository;
 
@@ -16,7 +14,7 @@ public class GetMaxDefenderGoalsUseCase {
     }
 
     public int execute() {
-        return repository.getPlayers().stream()
+        return repository.getCachedPlayers().stream()
                 .filter(player -> player.position() == Position.DEFENDER)
                 .mapToInt(Player::goals)
                 .max()
