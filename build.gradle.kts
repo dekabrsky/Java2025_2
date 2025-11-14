@@ -13,6 +13,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.mockito:mockito-core:5.+")
     implementation("org.jfree:jfreechart:1.5.6")
     implementation("com.google.inject:guice:5.1.0")
     implementation("org.telegram:telegrambots:6.9.0")
