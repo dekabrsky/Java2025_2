@@ -15,7 +15,7 @@ public class GetMaxDefenderGoalsUseCase {
 
     public int execute() {
         return repository.getCachedPlayers().stream()
-                .filter(player -> player.position() == Position.DEFENDER)
+                .filter(player -> player.position() == Position.FORWARD)
                 .mapToInt(Player::goals)
                 .max()
                 .orElse(0);
