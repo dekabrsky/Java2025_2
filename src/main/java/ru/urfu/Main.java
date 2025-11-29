@@ -14,17 +14,16 @@ import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how GIGA IDE suggests fixing it.
-        var players = CsvParser.parseCsvToList("/Users/denis/IdeaProjects/Java2025_2/players.csv");
-        System.out.println(players);
+        var parser = new CsvParser("/Users/denis/IdeaProjects/Java2025_2/players.csv");
 
-        Resolver resolver = new Resolver(players);
+        Resolver resolver = new Resolver(parser);
 
         System.out.println(resolver.getTeams());
 
-        var chartData = ChartMapper.mapDataToChart(players);
+        var chartData = ChartMapper.mapDataToChart(parser.parseCsvToList());
         ChartDrawer.showChart(chartData);
     }
 }

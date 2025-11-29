@@ -2,6 +2,7 @@ package ru.urfu.resolver;
 
 import ru.urfu.model.Player;
 import ru.urfu.model.Position;
+import ru.urfu.parser.CsvParser;
 
 import java.util.List;
 import java.util.Map;
@@ -11,8 +12,8 @@ import java.util.stream.Collectors;
 public class Resolver implements IResolver {
     private final List<Player> players;
 
-    public Resolver(List<Player> players) {
-        this.players = players;
+    public Resolver(CsvParser parser) {
+        this.players = parser.parseCsvToList();
     }
 
     @Override
