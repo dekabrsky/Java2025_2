@@ -51,6 +51,7 @@ public class Resolver implements IResolver {
     public Set<String> getTeams() {
         return players.stream()
                 .map(Player::agency)
+                .filter(agency -> agency != null && !agency.isEmpty())
                 .collect(Collectors.toSet());
     }
 
