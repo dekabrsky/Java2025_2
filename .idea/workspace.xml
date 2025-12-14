@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c1f70389-3ee9-4ccf-acb0-2d8d321035fb" name="Список изменений" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/data/api/ApiService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/data/database/DatabaseHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/data/parser/CsvLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/model/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/repository/CountryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/usecase/FindCountriesByPenetrationUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/usecase/FindMinUsersUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/usecase/GetChartDataUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/view/MainWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ru/urfu/data/database/DatabaseHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/urfu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/TgApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/chart/ChartDrawer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/chart/ChartMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/console/Communicator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/data/dataSource/LocalDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/data/dataSource/RemoteDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/data/db/PlayerDatabaseManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/data/model/PlayerEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/data/repository/PlayersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/di/AppModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/interactor/PlayersInteractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/model/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/model/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/repository/IPlayersRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/useCase/GetMaxDefenderGoalsUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/useCase/GetPlayersFromDbUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/useCase/GetPlayersWithoutAgencyUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/domain/useCase/LoadPlayersUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/parser/CsvParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/presentation/controller/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/presentation/presenter/Presenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/presentation/presenter/PresenterFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/presentation/view/ConsoleView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/presentation/view/TgBot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/presentation/view/ViewInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/resolver/IResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/urfu/resolver/Resolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fakePlayers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ResolverTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java2025_2" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java2025_2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java2025_2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java2025_2" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java2025_2" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;degenerateihvaldoto&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/degenerateihvaldoto/Java2025_2.git&quot;,
+    &quot;accountId&quot;: &quot;7a15f366-d714-4000-9f91-b5163facc4e2&quot;
+  }
+}</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="36ktnclLiBw3ql0OfRKylOsdDWr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.ApiServiceTest (1).executor": "Run",
+    "Gradle.ApiServiceTest.executor": "Run",
+    "Gradle.CountryTest.executor": "Run",
+    "Gradle.DatabaseHandlerTest.executor": "Run",
+    "Gradle.FindMinUsersUseCaseTest.execute_ShouldReturnDataFromRepository.executor": "Run",
+    "Gradle.FindMinUsersUseCaseTest.execute_shouldReturnDataFromRepository.executor": "Run",
+    "Gradle.Java2025_2 [:ru.urfu.Main.main()].executor": "Run",
+    "Gradle.Java2025_2 [build].executor": "Run",
+    "Gradle.Java2025_2 [clean].executor": "Run",
+    "Gradle.Java2025_2 [test].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/JavaProjects/Java2025_2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "Приложение.MainApp.executor": "Run"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\JavaProjects\Java2025_2" />
+      <recent name="C:\JavaProjects\Java2025_2\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.Java2025_2 [test]">
+    <configuration name="ApiServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.urfu.data.api.ApiServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CountryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.urfu.domain.model.CountryTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DatabaseHandlerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.urfu.data.database.DatabaseHandlerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FindMinUsersUseCaseTest.execute_ShouldReturnDataFromRepository" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.urfu.domain.usecase.FindMinUsersUseCaseTest.execute_ShouldReturnDataFromRepository&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Java2025_2 [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Java2025_2 [test]" />
+        <item itemvalue="Gradle.DatabaseHandlerTest" />
+        <item itemvalue="Gradle.FindMinUsersUseCaseTest.execute_ShouldReturnDataFromRepository" />
+        <item itemvalue="Gradle.CountryTest" />
+        <item itemvalue="Gradle.ApiServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="уровень приложения" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Задача по умолчанию">
+      <changelist id="c1f70389-3ee9-4ccf-acb0-2d8d321035fb" name="Список изменений" comment="" />
+      <created>1765562564946</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1765562564946</updated>
+    </task>
+    <servers />
+  </component>
+</project>

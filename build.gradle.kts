@@ -1,6 +1,7 @@
 plugins {
-    id("java")
-    id("application")
+    java
+    application
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "ru.urfu"
@@ -10,23 +11,41 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    implementation("org.jfree:jfreechart:1.5.6")
-    implementation("com.google.inject:guice:5.1.0")
-    implementation("org.telegram:telegrambots:6.9.0")
-    implementation("org.xerial:sqlite-jdbc:3.7.2")
-    implementation("com.j256.ormlite:ormlite-core:6.1")
-    implementation("com.j256.ormlite:ormlite-jdbc:6.1")
-    compileOnly("org.projectlombok:lombok:1.18.30")
-    annotationProcessor("org.projectlombok:lombok:1.18.30")
+// Указываем, что все исходные файлы в кодировке UTF-8 (синтаксис Kotlin)
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
 }
 
-tasks.test {
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+dependencies {
+    // Основные зависимости (в Kotlin кавычки двойные)
+    implementation("org.xerial:sqlite-jdbc:3.47.1.0")
+    implementation("com.opencsv:opencsv:5.9")
+    implementation("org.jfree:jfreechart:1.5.3")
+
+    // Тестовые зависимости
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
+    testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.11.0")
+}
+
+tasks.withType<Test> {
     useJUnitPlatform()
 }
 
 application {
-    mainClass = "ru.urfu.Main"
+    mainClass.set("ru.urfu.Main")
+    // Говорим Java всегда использовать UTF-8 при запуске (синтаксис Kotlin)
+    applicationDefaultJvmArgs = listOf("-Dfile.encoding=UTF-8")
+}
+
+tasks.shadowJar {
+    archiveBaseName.set("CountryStatsProject")
+    archiveClassifier.set("")
+    archiveVersion.set("1.0")
 }

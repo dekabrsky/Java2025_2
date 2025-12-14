@@ -1,13 +1,17 @@
 package ru.urfu;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
-import ru.urfu.di.AppModule;
-import ru.urfu.presentation.view.ConsoleView;
+import ru.urfu.data.database.DatabaseHandler;
+import ru.urfu.domain.repository.CountryRepository;
+import ru.urfu.view.MainWindow;
+
+import javax.swing.SwingUtilities;
 
 public class Main {
     public static void main(String[] args) {
-        Injector injector = Guice.createInjector(new AppModule());
-        injector.getInstance(ConsoleView.class);
+        CountryRepository repository = new DatabaseHandler();
+        SwingUtilities.invokeLater(() -> {
+            MainWindow window = new MainWindow(repository);
+            window.setVisible(true);
+        });
     }
 }
