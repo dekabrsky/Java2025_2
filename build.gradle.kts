@@ -10,8 +10,7 @@ version = "1.0-SNAPSHOT"
 repositories {
     mavenCentral()
 }
-
-// Указываем, что все исходные файлы в кодировке UTF-8 (синтаксис Kotlin)
+    // кодировка компилятора
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
@@ -22,12 +21,10 @@ java {
 }
 
 dependencies {
-    // Основные зависимости (в Kotlin кавычки двойные)
     implementation("org.xerial:sqlite-jdbc:3.47.1.0")
     implementation("com.opencsv:opencsv:5.9")
     implementation("org.jfree:jfreechart:1.5.3")
 
-    // Тестовые зависимости
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.1")
     testImplementation("org.mockito:mockito-core:5.11.0")
@@ -37,10 +34,9 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
-
+// кодировка JVM во время запуска
 application {
     mainClass.set("ru.urfu.Main")
-    // Говорим Java всегда использовать UTF-8 при запуске (синтаксис Kotlin)
     applicationDefaultJvmArgs = listOf("-Dfile.encoding=UTF-8")
 }
 
